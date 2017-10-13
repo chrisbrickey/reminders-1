@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import Root from './components/root.jsx';
 
 import { receiveAllReminders,
          receiveSingleReminder } from './actions/reminder_actions';
@@ -16,6 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.receiveSingleReminder = receiveSingleReminder;
 
   const root = document.getElementById('react');
-  ReactDOM.render(
-    <div>on entry.jsx</div>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });

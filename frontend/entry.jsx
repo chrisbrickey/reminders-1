@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root.jsx';
 
+
 import { receiveAllReminders,
          receiveSingleReminder } from './actions/reminder_actions';
+
+import { allReminderArray } from './reducers/selectors.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.receiveAllReminders = receiveAllReminders;
   window.receiveSingleReminder = receiveSingleReminder;
+  window.allReminderArray = allReminderArray;
 
   const root = document.getElementById('react');
   ReactDOM.render(<Root store={store} />, root);

@@ -1,3 +1,7 @@
+import { RECEIVE_REMINDERS,
+         RECEIVE_REMINDER } from '../actions/reminder_actions';
+import merge from 'lodash/merge';
+
 const initialState = {
   1: {
     id: 1,
@@ -18,6 +22,16 @@ const remindersReducer = (state = initialState, action) => {
   let nextState;
 
   switch(action.type) {
+    case RECEIVE_REMINDERS:
+      nextState = {};
+      action.reminders.forEach((reminder) => {
+        nextState[reminder.id] = reminder;
+      });
+      return nextState;
+
+    case RECEIVE_REMINDER:
+      const newReminder = {[action.reminder.id]: action.reminder};
+      return merge({}, state, newReminder);
 
     default:
       return state;

@@ -1,5 +1,19 @@
-##### Excerpt from Joseph Furlott tutorial
+#### How to run this program
 
-It is key here to note that when doing development work you will run npm start which will spin up a webpack development server. You will visit your site by going to localhost:8080/webpack-dev-server/#/ in your browser. The server has to be running for you app to work this way.
+- During development: Spin up webpack development server from terminal with `npm start`; Then enter this in browswer: localhost:8080/webpack-dev-server/#/
+- For deployment: use npm run build to generate assets in /build and access in browser with `open index.html`
 
-For deployment, you will use npm run build which simply generates your assets in /build. To view your app this way (as to simulate deployment), you will have to edit the newly created index.html.
+
+#### Dependencies
+*installed and noted by prefacing with `npm install --save`*
+- webpack-dev-server     (this is what allows us to view via port 8080 instead of loading index.html directly)
+- webpack
+- react
+- react-dom
+- redux
+- react-redux
+- babel-core
+- babel-loader
+- babel-preset-react
+- babel-preset-es2015
+- lodash

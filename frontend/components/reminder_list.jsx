@@ -8,7 +8,7 @@ class ReminderList extends React.Component {
     console.log(reminders);
 
     const reminderItems = reminders.map(reminder => (
-      <li>{ reminder.title }</li>
+      <li key={reminder.id}>{ reminder.title }</li>
     ) //end of body; doesn't include parameter
   ); //end of anonymous function
 
